@@ -10,7 +10,7 @@ const url = 'mongodb://localhost:27017/my-first-db';
 const app = express();
 
 app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(logger('dev'));
 app.use(errorhandler());
 app.use(express.static(path.join(__dirname, '/')));
