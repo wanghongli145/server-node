@@ -1,0 +1,77 @@
+[
+  {
+    "country": "china",
+    "city": "Beijing",
+    "phone": "123-456-7890"
+  },
+  {
+    "country": "china",
+    "city": "Beijing",
+    "phone": "123-456-1111"
+  },
+  {
+    "country": "china",
+    "city": "Beijing",
+    "phone": "123-456-1242"
+  },
+  {
+    "country": "china",
+    "city": "Beijing",
+    "phone": "123-456-1232"
+  },
+  {
+    "country": "china",
+    "city": "Beijing",
+    "phone": "123-456-1122"
+  },
+  {
+    "country": "china",
+    "city": "Beijing",
+    "phone": "123-456-3000"
+  },
+  {
+    "country": "china",
+    "city": "Shanghai",
+    "phone": "456-456-7891"
+  },
+  {
+    "country": "china",
+    "city": "Shanghai",
+    "phone": "456-456-7894"
+  },
+  {
+    "country": "china",
+    "city": "Shanghai",
+    "phone": "456-456-7893"
+  },
+  {
+    "country": "china",
+    "city": "Shanghai",
+    "phone": "456-456-7890"
+  },
+  {
+    "country": "china",
+    "city": "Nanjing",
+    "phone": "900-456-1222"
+  },
+  {
+    "country": "china",
+    "city": "Nanjing",
+    "phone": "900-456-9900"
+  },
+  {
+    "country": "china",
+    "city": "Nanjing",
+    "phone": "900-456-9808"
+  },
+  {
+    "country": "china",
+    "city": "Nanjing",
+    "phone": "900-456-7891"
+  },
+  {
+    "country": "china",
+    "city": "Nanjing",
+    "phone": "900-456-7893"
+  }
+]

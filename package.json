@@ -4,7 +4,7 @@
   "description": "",
   "main": "event.js",
   "scripts": {
-    "start": "node server.3.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
