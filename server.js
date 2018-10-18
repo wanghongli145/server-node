@@ -1,4 +1,4 @@
-// p40
+// 数据迁移
 const mongodb = require('mongodb');
 const customers = require('./customer-data.json');
 const customerAddresses= require('./customer-address-db.json');
@@ -16,31 +16,26 @@ mongodb.MongoClient.connect(url, {
   const dataBase = db.db('customer-address-db');
   customers.forEach((customer, index, list) => {
     customers[index] = Object.assign(customer, customerAddresses[index]);
-    if (index % limit === 0) {
+    if (index % limit == 0) {
       const start = index;
       const end = (start + limit > customers.length) ? customers.length - 1 : start +limit;
       tasks.push((done) => {
         dataBase.collection('customers').insert(customers.slice(start, end), (error, results) => {
           done(error, results);
-        })
-      })
+        });
+      });
     }
-  })
+  });
   
   console.log(`Launching ${tasks.length} paraller task(s)`);
   const startTime = Date.now();
   async.parallel(tasks, (error, results) => {
     if (error) {
       console.error(error);
-      const endTime = Date.now();
-      console.log(`Execution time: ${endTime - startTime}`);
     }
-  })
-  
-
-
-  // const port = 7001;
-  // app.use(errorhandler())
-  // app.listen(port);
-  // console.log(`Your server is running in localhost:${port}`)
+    const endTime = Date.now();
+    console.log(`Execution time: ${endTime - startTime}`);;
+    console.log(results);
+    
+  });
 })
