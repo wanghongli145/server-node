@@ -1,4 +1,4 @@
-// p40
+// p40 运行： node 文件名  一个数字 （node server.js 10）
 const mongodb = require('mongodb');
 const customers = require('./customer-data.json');
 const customerAddresses= require('./customer-address-db.json');
@@ -36,11 +36,4 @@ mongodb.MongoClient.connect(url, {
       console.log(`Execution time: ${endTime - startTime}`);
     }
   })
-  
-
-
-  // const port = 7001;
-  // app.use(errorhandler())
-  // app.listen(port);
-  // console.log(`Your server is running in localhost:${port}`)
 })
