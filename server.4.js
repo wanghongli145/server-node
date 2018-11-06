@@ -1,4 +1,4 @@
-// 数据迁移
+// p40 运行： node 文件名  一个数字 （node server.4.js 10）
 const mongodb = require('mongodb');
 const customers = require('./customer-data.json');
 const customerAddresses= require('./customer-address-db.json');
@@ -33,9 +33,5 @@ mongodb.MongoClient.connect(url, {
     if (error) {
       console.error(error);
     }
-    const endTime = Date.now();
-    console.log(`Execution time: ${endTime - startTime}`);;
-    console.log(results);
-    
-  });
+  })
 })
