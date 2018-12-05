@@ -1,5 +1,5 @@
 // P49
-const mongoose = reqiure('mongoose');
+const mongoose = require('mongoose');
 const url = 'mongodb://localhost:27017/my-first-db';
 
 mongoose.Promise = global.Promise;
@@ -68,13 +68,13 @@ app.delete('/accounts/:id', (req, res, next) => {
   console.log(req.params.id);
   Account.findById(req.params.id, (error, account) => {
     if (error) return next(error);
-    account.remove((error, reslts) => {
+    account.remove((error, results) => {
       if (error) return next(error);
       res.send(results);
     });
   });
 });
-const port = 7001;
+const port = 7000;
 app.use(errorhandler());
 app.listen(port);
 console.log(`Your server is running in localhost:${port}`);
