@@ -38,10 +38,7 @@ app.param('id', (req, res, next) => {
 });
 
 app.get('/accounts/:id', (req, res, next) => {
-  Account.findById(req.params.id, (error, account) => {
-    if (error) return next(error);
-    res.send(account.toJSON());
-  });
+    res.send(req.account.toJSON());
 });
 
 app.post('/accounts', (req, res, next) => {
@@ -54,24 +51,18 @@ app.post('/accounts', (req, res, next) => {
 });
 
 app.put('/accounts/:id', (req, res, next) => {
-  Account.findById(req.params.id, (error, account) => {
-    if (error) return next(error);
     if (req.body.name) account.name = req.body.name;
     if (req.body.balance) account.balance = req.body.balance;
-    account.save((error, results) => {
+    req.account.save((error, results) => {
       res.send(results);
-    });
-  });
+    }); 
 });
 
 app.delete('/accounts/:id', (req, res, next) => {
   console.log(req.params.id);
-  Account.findById(req.params.id, (error, account) => {
+  req.account.remove((error, results) => {
     if (error) return next(error);
-    account.remove((error, results) => {
-      if (error) return next(error);
-      res.send(results);
-    });
+    res.send(results);
   });
 });
 const port = 7000;
